@@ -62,12 +62,14 @@ const ProductCard:React.FC<ProductCard> = ({data}) => {
           </div>
           <div>
               <p className="font-semibold text-lg">
-                random shirt 
                 {data.name}
               </p>
               <p className="text-sm text-gray-500">
                 Category
-                {data.category?.name}
+                {data.category.id==="1"?"Men":<></>}
+                {data.category.id==="2"?"Women":<></>}
+                {data.category.id==="3"?"Kids":<></>}
+                {data.category.id==="4"?"Beauty":<></>}
               </p>
               </div>
 
