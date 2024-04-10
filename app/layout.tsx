@@ -19,23 +19,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en">
-      
       <body className={font.className}>
         <StoreProvider>
           <ModalProvider>
-            <PreviewModal/>
+            <PreviewModal />
           </ModalProvider>
-          <ToastProvider/>
-        <Navbar/>
-        {children}
-        <Footer/>
+          <ToastProvider />
+          <Navbar />
+          {children}
+          <Footer />
         </StoreProvider>
       </body>
-      
-     
     </html>
   );
 }

@@ -1,37 +1,29 @@
-
 import { Product } from "@/types";
-
-
-interface Query{
-    categoryId?:string
-    colorId?:string
-    sizeId?:string
-    isFeatured?: boolean
-    productId?:string
-}
-let URL='http://localhost:3000/api/getProducts'
-
-
-const getProducts = async (query:Query):Promise<Product[]> => {
- 
-    let res = await fetch(URL);
-    // console.log(res.json())
-    const resp = await res.json();
-    let products:Product[]=resp
-    if(products===undefined)products=[]
-    if(query.productId!==undefined)products =products.filter((element:Product)=>element.id===query.productId)
-    if(query.categoryId!==undefined)products = products.filter((element:Product)=>element.category.id===query.categoryId)
-    if(query.colorId!==undefined)products = products.filter((element:Product)=>element.color===query.colorId)
-    if(query.sizeId!==undefined)products = products.filter((element:Product)=>element.size===query.sizeId)
-    if(query.isFeatured!==undefined)products = products.filter((element:Product)=>element.isFeatured===query.isFeatured)
-
-
-
-
-    return products;
+interface Query {
+  categoryId?: string;
+  colorId?: string;
+  sizeId?: string;
+  isFeatured?: boolean;
+  productId?: string;
 }
 
+let URL = "http://localhost:3000/api/getProducts";
 
+// getProducts fetches all types of Product from db using an API it is paramaterized to query spicifically
+// for different query type so we can get products based on colors/sizes/categories...
+const getProducts = async (query: Query): Promise<Product[]> => {
+  const res = await fetch(URL);
+  const products: Product[] = (await res.json()) || [];
 
+  return products.filter(
+    (product) =>
+      (!query.productId || product.id === query.productId) &&
+      (!query.categoryId || product.category.id === query.categoryId) &&
+      (!query.colorId || product.color === query.colorId) &&
+      (!query.sizeId || product.size === query.sizeId) &&
+      (query.isFeatured === undefined ||
+        product.isFeatured === query.isFeatured)
+  );
+};
 
 export default getProducts;
