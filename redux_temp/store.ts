@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import cartCounterSlice from "./slices/cartSlice";
-import previewModalSlice from "./slices/previewModalSlice";
+import cartCounterSlice from "./slices_temp/cartSlice";
+import previewModalSlice from "./slices_temp/previewModalSlice";
 import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 

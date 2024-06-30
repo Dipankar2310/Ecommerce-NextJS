@@ -5,10 +5,10 @@ import IconButton from "@/components/ui/iconButton";
 import Currency from "@/components/ui/currency";
 import { Product } from "@/types";
 import { useSelector, useDispatch } from "react-redux";
-import { removeItem, addItem, removeItemOnce } from "@/redux/slices/cartSlice";
+import { removeItem, addItem, removeItemOnce } from "@/redux_temp/slices_temp/cartSlice";
 
 import Button from "@/components/ui/button";
-import { RootState } from "@/redux/store";
+import { RootState } from "@/redux_temp/store";
 
 interface CartItemProps {
   data: Product;
