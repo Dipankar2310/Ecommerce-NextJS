@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Container from "@/components/ui/container";
 import { useSelector } from "react-redux";
-import { RootState } from "@/redux/store";
+import { RootState } from "../../../redux/store";
 import { Product } from "@/types";
 import CartItem from "./components/cartItem";
 import Summary from "./components/summary";
