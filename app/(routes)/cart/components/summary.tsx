@@ -7,9 +7,9 @@ import { useSelector } from "react-redux";
 import Button from "@/components/ui/button";
 import Currency from "@/components/ui/currency";
 import { toast } from "react-hot-toast";
-import { RootState } from "../../../../redux/store";
+import { RootState } from "@/redux/store";
 import { Product } from "@/types";
-import { removeAll } from "../../../../redux/slices/cartSlice";
+import { removeAll } from "@/redux/slices/cartSlice";
 import { useRouter } from "next/navigation";
 const Summary = () => {
   const searchParams = useSearchParams();

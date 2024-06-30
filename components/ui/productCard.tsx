@@ -5,11 +5,11 @@ import { Expand, ShoppingCart } from "lucide-react";
 import IconButton from "./iconButton";
 import Currency from "./currency";
 import { useRouter } from "next/navigation";
-import { addItem } from "../../redux/slices/cartSlice";
-import { onOpen } from "../../redux/slices/previewModalSlice";
+import { addItem } from "@/redux/slices/cartSlice";
+import { onOpen } from "@/redux/slices/previewModalSlice";
 import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
-import { RootState } from "../../redux/store";
+import { RootState } from "@/redux/store";
 interface ProductCard {
   data: Product;
 }
