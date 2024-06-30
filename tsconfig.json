@@ -20,7 +20,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@/redux/*": ["redux_temp/*"],
+      "@/redux/*": ["redux/*"],
     "@/components/*": ["./components/*"],
     "@/utils/*": ["./utils/*"],
       

@@ -4,9 +4,9 @@ import Currency from "./ui/currency";
 import Button from "./ui/button";
 import { ShoppingCart } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem } from "@/redux_temp/slices_temp/cartSlice";
+import { addItem } from "@/redux/slices/cartSlice";
 import toast from "react-hot-toast";
-import { RootState } from "@/redux_temp/store";
+import { RootState } from "@/redux/store";
 interface InfoProps {
   data: Product;
 }

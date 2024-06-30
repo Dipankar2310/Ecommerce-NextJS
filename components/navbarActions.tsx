@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Button from "./ui/button";
 import { ShoppingBag } from "lucide-react";
 import { useSelector } from "react-redux";
-import { type RootState } from "@/redux_temp/store";
+import { type RootState } from "@/redux/store";
 import { Product } from "@/types";
 import { useRouter } from "next/navigation";
 
