@@ -7,7 +7,7 @@ interface Query {
   productId?: string;
 }
 
-let URL = `${process.env.NEXT_PUBLIC_API_URL}/api/getCategories`;
+let URL = `${process.env.NEXT_PUBLIC_API_URL}/api/getProducts`;
 
 // getProducts fetches all types of Product from db using an API it is paramaterized to query spicifically
 // for different query type so we can get products based on colors/sizes/categories...
