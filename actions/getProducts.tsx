@@ -7,11 +7,13 @@ interface Query {
   productId?: string;
 }
 
-let URL = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/getProducts`;
+
 
 // getProducts fetches all types of Product from db using an API it is paramaterized to query spicifically
 // for different query type so we can get products based on colors/sizes/categories...
 const getProducts = async (query: Query): Promise<Product[]> => {
+  if(!process.env.NEXT_PUBLIC_API_URL) return []
+  let URL = `${process.env.NEXT_PUBLIC_API_URL}/api/getProducts`;
   const res = await fetch(URL);
   const products: Product[] = (await res.json()) || [];
 

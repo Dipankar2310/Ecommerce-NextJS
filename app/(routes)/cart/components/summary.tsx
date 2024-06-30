@@ -37,8 +37,10 @@ const Summary = () => {
   });
 
   //OnCheckout redirects to the stripe payment page
-  let URL = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/checkout`;
+
   const onCheckout = async () => {
+    if(!process.env.NEXT_PUBLIC_API_URL) return;
+    let URL = `${process.env.NEXT_PUBLIC_API_URL}/api/api/checkout`;
     const res = await fetch(URL, {
       method: "POST",
       headers: {
