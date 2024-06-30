@@ -1,11 +1,11 @@
 "use client";
-import { RootState } from "@/Redux/store";
+import { RootState } from "@/redux/store";
 import Gallery from "@/components/gallery/gallery";
 import Info from "@/components/info";
 import Modal from "@/components/ui/modal";
 import { Product } from "@/types";
 import { useSelector, useDispatch } from "react-redux";
-import { onClose } from "@/Redux/Slices/previewModalSlice";
+import { onClose } from "@/redux/slices/previewModalSlice";
 
 const PreviewModal = () => {
   const dispatch = useDispatch();

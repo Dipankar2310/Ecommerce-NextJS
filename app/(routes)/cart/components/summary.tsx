@@ -7,9 +7,9 @@ import { useSelector } from "react-redux";
 import Button from "@/components/ui/button";
 import Currency from "@/components/ui/currency";
 import { toast } from "react-hot-toast";
-import { RootState } from "@/Redux/store";
+import { RootState } from "@/redux/store";
 import { Product } from "@/types";
-import { removeAll } from "@/Redux/Slices/cartSlice";
+import { removeAll } from "@/redux/slices/cartSlice";
 import { useRouter } from "next/navigation";
 const Summary = () => {
   const searchParams = useSearchParams();
@@ -61,7 +61,7 @@ const Summary = () => {
               <div className="font-medium col-span-3">{item.name}</div>
               <div className="text-gray-500"> x{item.cartCount}</div>
 
-              <div className="font-medium">
+              <div className="flex justify-end">
                 <Currency value={item.price} />
               </div>
             </div>
