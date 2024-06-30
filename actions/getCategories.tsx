@@ -1,6 +1,6 @@
 import { Category } from "@/types";
 
-const URL = "http://localhost:3000/api/getCategories";
+const URL = `${process.env.NEXT_PUBLIC_API_URL}/api/getCategories`;
 
 // getCategories fetches all types of categories from db using an API.
 const getCategories = async (): Promise<Category[]> => {

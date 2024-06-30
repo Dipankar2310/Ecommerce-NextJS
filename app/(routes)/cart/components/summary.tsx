@@ -25,6 +25,7 @@ const Summary = () => {
     if (searchParams.get("cancelled")) {
       toast.error("Something went wrong.");
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams, removeAll]);
 
   const totalPrice = items.reduce((total, item) => {
@@ -36,7 +37,7 @@ const Summary = () => {
   });
 
   //OnCheckout redirects to the stripe payment page
-  let URL = "http://localhost:3000/api/checkout";
+  let URL = `${process.env.NEXT_PUBLIC_API_URL}/api/getCategories`;
   const onCheckout = async () => {
     const res = await fetch(URL, {
       method: "POST",
