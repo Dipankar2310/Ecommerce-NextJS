@@ -40,7 +40,7 @@ const Summary = () => {
 
   const onCheckout = async () => {
     if(!process.env.NEXT_PUBLIC_API_URL) return;
-    let URL = `${process.env.NEXT_PUBLIC_API_URL}/api/api/checkout`;
+    let URL = `${process.env.NEXT_PUBLIC_API_URL}/api/checkout`;
     const res = await fetch(URL, {
       method: "POST",
       headers: {
