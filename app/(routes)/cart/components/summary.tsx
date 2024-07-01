@@ -11,12 +11,22 @@ import { RootState } from "@/redux/store";
 import { Product } from "@/types";
 import { removeAll } from "@/redux/slices/cartSlice";
 import { useRouter } from "next/navigation";
+import  express from 'express';
+import cors from 'cors'
 const Summary = () => {
   const searchParams = useSearchParams();
   const items = useSelector<RootState, Product[]>(
     (state) => state.cartCounterSlice.items
   );
   const router = useRouter();
+//   const app = express();
+//   app.use(
+//     cors({
+//         origin: process.env.NEXT_PUBLIC_API_URL,
+//         optionsSuccessStatus: 200, 
+//         // Some legacy browsers choke on 204
+//     })
+// );
   useEffect(() => {
     if (searchParams.get("success")) {
       toast.success("Payment completed.");
@@ -90,3 +100,5 @@ const Summary = () => {
 };
 
 export default Summary;
+
+
